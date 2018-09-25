@@ -1,0 +1,33 @@
+
+<html> 
+<head>   
+<title>Javascript Algos</title>
+
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"> 
+<link rel="stylesheet" type="text/css" href="style.css">
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.11/lodash.min.js"></script> 
+<script src="script.js"></script>
+
+</head>
+<body>
+
+<h3 class="text-center">Messages App</h3>
+
+<div class="center">
+    <!-- TODO ADD AN ATTRIBUTE THAT focuses the CURSOR INTO THE TEXTAREA ELEMENT WHEN THE PAGE LOADS -->
+    <textarea 
+        autofocus
+        rows=6 
+        cols=55 
+        id="inputText" 
+        type="text"
+        style="margin-bottom: 15px;"> 
+    </textarea>
+    <br>
+    <button class="btn btn-primary" onclick="clearMessages()">Clear Messages</button>
+    <button class="btn btn-primary" onclick="addPlainMessage()">Enter</button>
+</div>
+
+</body>
+</html>
