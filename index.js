@@ -69,9 +69,9 @@
         handleText = document.createTextNode(handle);
         handleSpan.appendChild(handleText);
         
-        // removed handle from user Text message because it already display in code above 
-        let userText = getUserText().replace(/@\S+/g, ''); //start from @ and end at first space to get handle name 
-        var messageText = document.createTextNode(userText); 
+        // removed handle from user Text message because it is already display in code above  
+        // For it, start from @ and end at first space to trace handle name 
+        var messageText = document.createTextNode( getUserText().replace(/@\S+/g, '') );  
         
         messageDiv.appendChild(handleSpan);
         messageDiv.appendChild(messageText);
@@ -195,11 +195,10 @@
     function constantTimeNameFilter(userText) {
         
         // Added Code for Constant Time Name Filter 
-        // search name in dictionaryUserNames object. 
-        const firstThreeChars = userText.toLowerCase().slice(1,4); 
-        console.log(`Search result = ${dictionaryUserNames[firstThreeChars]}`);
-        return dictionaryUserNames[firstThreeChars];
+        // search name in dictionaryUserNames object for first 3 characters in first and last name.  
+        // Enable constantTimeNameFilter by uncommenting "const filteredNames = constantTimeNameFilter(userText);" in searchNames(). 
 
+        return dictionaryUserNames[ userText.toLowerCase().slice(1,4) ]; 
     }
 
     function filterNames(userText) {
@@ -277,10 +276,11 @@
             console.log('filter names ...');
 
             // Regular filter Name 
-            // const filteredNames = filterNames(userText);
+            const filteredNames = filterNames(userText);
 
             // Constant Time filter name. 
-            const filteredNames = constantTimeNameFilter(userText);
+            // const filteredNames = constantTimeNameFilter(userText);
+
             //console.log("filteredNames = " + filteredNames); 
 
             // if filteredNames does not populate then do not display it because sometimes match is not found so filteredNames is undefined.  
